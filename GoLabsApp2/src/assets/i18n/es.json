@@ -1,0 +1,12 @@
+{
+  "login": {
+    "email": "email",
+    "password": "contraseña",
+    "action": "Ingresar"
+  },
+  "menu": {
+    "company-values": "Valores de la Compañía",
+    "logout": "Salir",
+    "team": "Nuestro equipo"
+  }
+}

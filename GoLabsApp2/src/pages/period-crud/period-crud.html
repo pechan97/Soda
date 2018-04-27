@@ -1,0 +1,77 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'PeriodCrud' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<h3>Welcome Period CRUD Page</h3>
+
+  <h4>Period</h4>
+  <form name = "addperiod">
+  <ion-grid>
+  <ion-row>
+    <ion-col>
+    </ion-col>
+    <ion-col>
+    <ion-item>
+      <ion-label>Start Date</ion-label>
+      <ion-datetime name="start_date" displayFormat="MMM DD YYYY"   [(ngModel)]="start_date"></ion-datetime>
+    </ion-item>
+<ion-item>
+      <ion-label>Ends</ion-label>
+      <ion-datetime name="end_date" displayFormat="MMM DD YYYY"  [(ngModel)]="end_date"></ion-datetime>
+    </ion-item>
+<ion-row >
+    <ion-col>
+    </ion-col>
+    <ion-col>
+     <button ion-button color="light" (click)="addPeriod($event)">Save</button>
+    </ion-col>
+    <ion-col>
+    </ion-col>
+  </ion-row>
+    </ion-col>
+    <ion-col>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</form>
+  <ion-list>
+    <ion-item *ngFor="let periodos of periods | async">
+      <ion-card>
+        <ion-card-content>
+          <p>End_date: {{periodos.end_date}}</p>
+          <p>Start_date: {{periodos.start_date}}</p>
+
+          <button ion-button icon-right color="secondary" small (click)="editPeriod(periodos)">
+            <ion-icon name="md-create" md="md-create">Edit</ion-icon>
+          </button>
+
+          <button ion-button color="danger" small (click)="deletePeriod(periodos.$key)">
+            <ion-icon name="md-trash" md="md-trash">Delete</ion-icon>
+          </button>
+        </ion-card-content>
+        <ion-item>
+         <ion-toggle [(ngModel)]="periodos.active" checked="periodos.active" (ionChange)="doActive(periodos,periodos.active)"></ion-toggle>
+       </ion-item>
+      </ion-card>
+
+    </ion-item>
+
+
+    <!--ion-item>
+   <ion-label>Test</ion-label>
+   <ion-toggle [(ngModel)]="item" checked="false" (ionChange)="updateItem(item)"></ion-toggle>
+ </ion-item-->
+
+  </ion-list>
+
+  <!--button ion-button outline (click)="addProduct()">Add Product</button!-->
+</ion-content>

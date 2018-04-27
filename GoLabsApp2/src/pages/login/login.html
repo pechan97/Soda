@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div id="footer-icon">
+     <img src="assets/images/footer.png"/>
+  </div>
+
+  <ion-row>
+    <ion-col width-80>
+
+    </ion-col>
+  </ion-row>
+
+  <ion-list>
+    <form name = "loginForm" novalidate>
+      <ion-item>
+        <!--ion-label stacked>Email</ion-label!-->
+        <ion-input id = "email" [(ngModel)]= "email" name = "email" type="email"
+          placeholder="Email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <!--ion-label stacked>Password</ion-label-->
+        <ion-input name="password" type="password"
+          placeholder="Password" [(ngModel)]= "password" name = "password"></ion-input>
+      </ion-item>
+    </form>
+    <button ion-button block icon-left id="btn-login" (click)="loginUser($event)">
+      <ion-icon name="log-in"></ion-icon>
+      {{ 'login.action' | translate }}
+    </button>
+
+
+    <button ion-button block icon-left id="btn-login" (click)="doLogin($event)">
+      <ion-icon name="log-in"></ion-icon>
+        {{ 'login.action' | translate }}
+    </button>
+    <button ion-button block icon-left (click)="loginGoogle()">
+      <ion-icon name="logo-google" md="logo-google"></ion-icon>  Sign In With Google</button>
+
+  </ion-list>
+
+</ion-content>

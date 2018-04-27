@@ -1,0 +1,12 @@
+{
+  "login": {
+    "email": "email",
+    "password": "password",
+    "action": "Log In"
+  },
+  "menu": {
+    "company-values": "Company Values",
+    "logout": "Log Out",
+    "team": "Our Team"
+  }
+}

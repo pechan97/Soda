@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <!--ion-title>{{ 'menu.products' | translate }}</ion-title!-->
+    <ion-title>{{ 'Products' | translate }}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only outline (click)="addProduct()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <h3>Welcome Products Page</h3>
+
+  <h4>Products</h4>
+  <ion-list>
+    <ion-item *ngFor="let product of products | async">
+      <!--p>Product: {{product.product}}</p>
+      <p>Default: {{product.default_product}}</p>
+      <p>Description: {{product.description}}</p>
+      <p>Id: {{product.id}}</p>
+      <p>Price: {{product.price}}</p!-->
+
+      <ion-card>
+        <ion-card-content>
+          <p>Product: {{product.product}}</p>
+          <p>Default_Product: {{product.default_product}}</p>
+          <p>Description: {{product.description}}</p>
+          <p>Id: {{product.id}}</p>
+          <p>Price: {{product.price}}</p>
+
+          <button ion-button icon-right color="secondary" small (click)="editProduct(product)">
+            <ion-icon name="md-create" md="md-create">Edit</ion-icon>
+          </button>
+
+          <button ion-button color="danger" small (click)="deleteProduct(product.$key)">
+            <ion-icon name="md-trash" md="md-trash">Delete</ion-icon>
+          </button>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-item>
+
+
+    <!--ion-item>
+   <ion-label>Test</ion-label>
+   <ion-toggle [(ngModel)]="item" checked="false" (ionChange)="updateItem(item)"></ion-toggle>
+ </ion-item-->
+
+  </ion-list>
+
+  <!--button ion-button outline (click)="addProduct()">Add Product</button!-->
+</ion-content>
